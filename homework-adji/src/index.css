@@ -1,0 +1,71 @@
+body {
+  background-color: #589b01;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: white;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form input {
+  border: 1px solid #000000;
+  width: 50%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form textarea {
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+#callApi {
+  margin: 10px;
+  padding: 8px px;
+  background-color: #589b01;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn {
+  margin: 10px;
+  padding: 8px px;
+  background-color: #589b01;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.playlist {
+  background-color: #b8b8b8;
+  border: 1px solid #000000;
+  width: 300px;
+  overflow: hidden;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 30px auto;
+}
+
+.playlist img {
+  width: 200px;
+}
+
+.playlist p {
+  margin: 10px 0;
+}
+
+.playlist input {
+  width: 50%;
+  border-radius: 5px;
+  padding: 10px;
+}
