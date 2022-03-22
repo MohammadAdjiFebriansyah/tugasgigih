@@ -1,71 +1,97 @@
-import { useEffect } from 'react';
-
-const getPlaylist = async () => {
-  try {
-    const response = await fetch(
-      'https://gist.githubusercontent.com/aryapradipta9/e6492383477803b233916e01f36d5465/raw/66942c739d66d3774303f84071696aa865a07077/single-sample.json'
-    );
-    const data = await response.json();
-    console.log(data);
-    return data;
-  } catch (error) {
-    alert(error);
-  }
-};
-
-const SPOTIFY_CLIENT_ID = process.env.REACT_APP_SPOTIFY;
+import './App.css';
 
 function App() {
-  useEffect(() => {
-    console.log(SPOTIFY_CLIENT_ID);
-    getPlaylist();
-  }, []);
+  const data = {
+    album: {
+      album_type: "album",
+      artists: [
+        {
+          external_urls: {
+            spotify: "https://open.spotify.com/artist/1dfeR4HaWDbWqFHLkxsg1d"
+          },
+          href: "https://api.spotify.com/v1/artists/1dfeR4HaWDbWqFHLkxsg1d",
+          id: "1dfeR4HaWDbWqFHLkxsg1d",
+          name: "Queen",
+          type: "artist",
+          uri: "spotify:artist:1dfeR4HaWDbWqFHLkxsg1d"
+        }
+      ],
+      external_urls: {
+        spotify: "https://open.spotify.com/album/6i6folBtxKV28WX3msQ4FE"
+      },
+      href: "https://api.spotify.com/v1/albums/6i6folBtxKV28WX3msQ4FE",
+      id: "6i6folBtxKV28WX3msQ4FE",
+      images: [
+        {
+          height: 640,
+          url: "https://i.scdn.co/image/ab67616d0000b273e8b066f70c206551210d902b",
+          width: 640
+        },
+        {
+          height: 300,
+          url: "https://i.scdn.co/image/ab67616d00001e02e8b066f70c206551210d902b",
+          width: 300
+        },
+        {
+          height: 64,
+          url: "https://i.scdn.co/image/ab67616d00004851e8b066f70c206551210d902b",
+          width: 64
+        }
+      ],
+      name: "Bohemian Rhapsody (The Original Soundtrack)",
+      release_date: "2018-10-19",
+      release_date_precision: "day",
+      total_tracks: 22,
+      type: "album",
+      uri: "spotify:album:6i6folBtxKV28WX3msQ4FE"
+    },
+    artists: [
+      {
+        external_urls: {
+          spotify: "https://open.spotify.com/artist/1dfeR4HaWDbWqFHLkxsg1d"
+        },
+        href: "https://api.spotify.com/v1/artists/1dfeR4HaWDbWqFHLkxsg1d",
+        id: "1dfeR4HaWDbWqFHLkxsg1d",
+        name: "Queen",
+        type: "artist",
+        uri: "spotify:artist:1dfeR4HaWDbWqFHLkxsg1d"
+      }
+    ],
+    disc_number: 1,
+    duration_ms: 354947,
+    explicit: false,
+    external_ids: {
+      isrc: "GBUM71029604"
+    },
+    external_urls: {
+      spotify: "https://open.spotify.com/track/3z8h0TU7ReDPLIbEnYhWZb"
+    },
+    href: "https://api.spotify.com/v1/tracks/3z8h0TU7ReDPLIbEnYhWZb",
+    id: "3z8h0TU7ReDPLIbEnYhWZb",
+    is_local: false,
+    is_playable: true,
+    name: "Bohemian Rhapsody",
+    popularity: 72,
+    preview_url: null,
+    track_number: 7,
+    type: "track",
+    uri: "spotify:track:3z8h0TU7ReDPLIbEnYhWZb"
+  };
+
+  console.log(data.uri)
 
   return (
-<html>
-  <head>
-    <title>Create Playlist</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/styles.css" />
-  </head>
+    <div class="header">
+      <h2>Song</h2>
+        <div class="playlist">
+        <img src={data.album.images[0].url} alt="true"/>
+        <p>{data.album.name}</p>
+        <p>{data.artists[0].name}</p>
 
-  <body>
-    <div class="container">
-      <h1>Create Playlist</h1>
-      <form class="form">
-        <p for="title">Title</p>
-        <input type="text" id="title" name="title" />
-        <p for="description">Description</p>
-        <textarea
-          id="description"
-          cols="30"
-          rows="10"
-          name="description"
-        ></textarea>
-        <input type="submit" id="callApi" value="Add to Playlist" />
-      </form>
-      <h2>Songs</h2>
-      <div class="playlist">
-        <img src="https://i.ytimg.com/vi/sHI_ZV40qiE/maxresdefault.jpg" />
-        <p>Title : Satru</p>
-        <p>Artist : Denny Caknan & Happy Asmara</p>
-        <p>Albums : Fortuna Enterprise Record</p>
-        <input type="submit" value="Add to Playlist" class="btn" />
-      </div>
-      <div class="playlist">
-        <img
-          src="https://cdn-2.tstatic.net/jatim/foto/bank/images/download-mp3-ku-puja-puja-happy-asmara.jpg"
-        />
-        <p>Title : Ku Puja Puja</p>
-        <p>Artist : Happy Asmara</p>
-        <p>Albums : DSA Record</p>
-        <input type="submit" value="Add to Playlist" class="btn" />
-      </div>
+        <a class="btn" role="button" href={data.uri}>Select</a>
+
+        </div>
     </div>
-
-  </body>
-</html>
-
   );
 }
 
