@@ -9,7 +9,7 @@ h2{
   text-align: center;
 }
 
-.playlist {
+.Album {
   background-color: #b8b8b8;
   border: 1px solid #000000;
   width: 300px;
@@ -19,12 +19,12 @@ h2{
   margin: 10px auto;
 }
 
-.playlist img {
+.Album img {
   width: 200px;
   margin: 0 50px;
 }
 
-.playlist p {
+.Album p {
   margin: 10px 0;
   text-align: center;
 }
