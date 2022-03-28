@@ -1,19 +1,23 @@
+import React from "react";
+import Data from "./data/spotify";
+import Song from "./components/album/song";
 import './App.css';
-import Album from "./components/album/album";
-import data from "./data/spotify.js";
 
 function App() {
-  return (
-    <div className="header">
-      <h2>Song</h2>
+  
+    return (
+      <div className="container">
+        <div className="Header">
+          <h1>Song Playlist</h1>
+		    </div>
+
         <div>
-        <Album Img={data.album.images[1].url}
-        NameAlbum={data.album.name}
-        NameArtist={data.artists[0].name}
-        Button={data.uri}></Album>
+          {Data.map((d) => (
+          <Song image={d.album.images[0].url} album={d.name} artist={d.artists[0]?.name} title={d.album.name} key={d.album.name}/>
+          ))}
         </div>
-    </div>
-  );
+      </div>
+    );
 }
 
 export default App;

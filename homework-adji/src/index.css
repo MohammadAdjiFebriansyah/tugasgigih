@@ -4,12 +4,12 @@ body {
   box-sizing: border-box;
 }
 
-h2{
+h1{
   margin: 10px 0;
   text-align: center;
 }
 
-.Album {
+.card-song {
   background-color: #b8b8b8;
   border: 1px solid #000000;
   width: 300px;
@@ -19,18 +19,18 @@ h2{
   margin: 10px auto;
 }
 
-.Album img {
+.card-song img {
   width: 200px;
   margin: 0 50px;
 }
 
-.Album p {
+.card-song h2 {
   margin: 10px 0;
   text-align: center;
 }
 
-a {
-  margin: 0 115px;
+button {
+  margin: 0 75px;
   padding: 8px 10px;
   background-color: #589b01;
   color: black;
