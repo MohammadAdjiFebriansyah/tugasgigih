@@ -7,6 +7,8 @@ import React, { useEffect } from 'react';
 function App() {
     const spotifySearch = new SearchBar();
 
+    const CLIENT_ID = "c3674ca69601470ebbf98c96ec75c3bd";
+
     const renderResult = () => {
         console.log("TESTING");
         return spotifySearch.state.result.map(data => (
@@ -39,7 +41,7 @@ function App() {
     return(
         <div className='container'>
             
-            <a className="btn login" role="button" href={`https://accounts.spotify.com/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=token&redirect_uri=http://localhost:3000/`}>Login to Spotify</a>
+            <a className="btn login" role="button" href={`https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&redirect_uri=http://localhost:3000/`}>Login to Spotify</a>
             <button className="btn logout" onClick={logout}>Logout</button>
 
             <form onSubmit={spotifySearch.searchCall}>
